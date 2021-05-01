@@ -40,9 +40,11 @@ Run `python train.py` with your specific usage options for GMM and TOM stage.
 ## Evaluation
 We adopt four evaluation metrics in our work for evaluating the performance of the proposed XingVTON. There are Jaccard score (JS), structral similarity index measure (SSIM), learned perceptual image patch similarity (LPIPS), and Inception score (IS).
 
-Note that JS is used for the same clothing retry-on cases (with ground truth cases) in the first geometric matching stage, while SSIM and LPIPS are used for the same clothing retry-on cases (with ground truth cases) in the second try-ob stage. In addition, IS is used to for different clothing try-on (where no ground truth is available). 
+Note that JS is used for the same clothing retry-on cases (with ground truth cases) in the first geometric matching stage, while SSIM and LPIPS are used for the same clothing retry-on cases (with ground truth cases) in the second try-ob stage. In addition, IS is used to for different clothing try-on (where no ground truth is available).
+
+
 ### For JS 
-- Step1: Run```python test.py --name GMM --stage GMM --workers 4 --datamode test --data_list test_pairs_same.txt --checkpoint checkpoints/GMM/gmm_final.pth```
+- Step1: Run```python test.py --name GMM --stage GMM --workers 4 --datamode test --data_list test_pairs_same.txt --checkpoint checkpoints/GMM_pretrained/gmm_final.pth```
 then the parsed segmentation area for current upper clothing is used as the reference image, accompanied with generated warped clothing mask then:
 
 - Step2: Run```python metrics/getJS.py```
@@ -56,7 +58,7 @@ Then the original target human image is used as the reference image, accompanied
 
 ### For LPIPS
 - Step1: You need to creat a new virtual enviriment, then install PyTorch 1.0+ and torchvision;
-- Step1: Run ```sh metrics/PerceptualSimilarity/testLPIPS.sh```;
+- Step2: Run ```sh metrics/PerceptualSimilarity/testLPIPS.sh```;
 
 ### For IS
 - Step1: Run TOM stage test ```python test.py --name TOM --stage TOM --workers 4 --datamode test --data_list test_pairs.txt --checkpoint checkpoints/TOM_pretrained/tom_final.pth```
