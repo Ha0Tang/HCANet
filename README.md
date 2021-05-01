@@ -1,11 +1,10 @@
 # XingVTON (PAMI)
 Official implementation of XingVTON for "Cross-Attention Is What You Need for Person Image Generation and Virtual Try-On" .
 <br/>Project page: [TODO](-----). 
-<br/>Saved/Pre-trained models: [TODO](--------)
 <br/>Dataset: [XingVTON](https://1drv.ms/u/s!Ai8t8GAHdzVUiQQYX0azYhqIDPP6?e=4cpFTI)
 <br/>The code and pre-trained models are tested with pytorch 0.4.1, torchvision 0.2.1, opencv-python 4.1 and pillow 5.4 (Python 3 env).
 <br/><br/>
-[Project page]() | [Paper]() | [Dataset]() | [Model]() | [Video]()
+[Project page]() | [Paper]() | [Dataset]() | [Video]()
 <br/><br/>
 ![Teaser](./teaser.png)
 	
@@ -66,9 +65,8 @@ Then the original target human image is used as the reference image, accompanied
 
 
 ## Inference/Demo
-Download the pre-trained models from here: TODO.
-Then run the same step as Testing to test/inference our model.
-The code and pre-trained models are tested with pytorch 0.4.1, torchvision 0.2.1, opencv 4.1 and pillow 5.4.
+The pre-trained models are directly provided in this project(./checkpoints), 
+Just run the same step as Evaluation to test/inference our model.
 
 
 ## Citation
