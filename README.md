@@ -100,7 +100,7 @@ XingGAN
 }
 ```
 
-If you use the original [CIT](https://github.com/Amazingren/CIT) | [BiGraphGAN](https://github.com/Ha0Tang/BiGraphGAN), [GestureGAN](https://github.com/Ha0Tang/GestureGAN), [C2GAN](https://github.com/Ha0Tang/C2GAN), and [SelectionGAN](https://github.com/Ha0Tang/SelectionGAN) model, please cite the following papers:
+If you use the original [CIT](https://github.com/Amazingren/CIT), [BiGraphGAN](https://github.com/Ha0Tang/BiGraphGAN), [GestureGAN](https://github.com/Ha0Tang/GestureGAN), [C2GAN](https://github.com/Ha0Tang/C2GAN), and [SelectionGAN](https://github.com/Ha0Tang/SelectionGAN) model, please cite the following papers:
 
 Cloth Interactive Transformer (CIT)
 ```
