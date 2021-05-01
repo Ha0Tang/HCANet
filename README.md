@@ -55,7 +55,8 @@ Then the original target human image is used as the reference image, accompanied
 - Step2: Run ```python metrics/getSSIM.py```
 
 ### For LPIPS
-- Step1: Run ```sh metrics/PerceptualSimilarity/testLPIPS.sh```
+- Step1: You need to creat a new virtual enviriment, then install PyTorch 1.0+ and torchvision;
+- Step1: Run ```sh metrics/PerceptualSimilarity/testLPIPS.sh```;
 
 ### For IS
 - Step1: Run TOM stage test ```python test.py --name TOM --stage TOM --workers 4 --datamode test --data_list test_pairs.txt --checkpoint checkpoints/TOM/tom_final.pth```
