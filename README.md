@@ -1,4 +1,4 @@
-# CP-VTON+ (CVPRW 2020)
+# XingVTON (PAMI)
 Official implementation for "CP-VTON+: Clothing Shape and Texture Preserving Image-Based Virtual Try-On" from CVPRW 2020.
 <br/>Project page: https://minar09.github.io/cpvtonplus/. 
 <br/>Saved/Pre-trained models: [Checkpoints](https://1drv.ms/u/s!Ai8t8GAHdzVUiQA-o3C7cnrfGN6O?e=EaRiFP)
