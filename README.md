@@ -85,7 +85,7 @@ Just run the same step as Evaluation to test/inference our model.
 This source code is inspired by [CP-VTON](https://github.com/sergeywong/cp-vton), [CP-VTON+](https://github.com/minar09/cp-vton-plus), and [XingGAN](https://github.com/Ha0Tang/XingGAN).
 
 ## Related Projects
-**[XingGAN](https://github.com/Ha0Tang/XingGAN) | [BiGraphGAN](https://github.com/Ha0Tang/BiGraphGAN) | [GestureGAN](https://github.com/Ha0Tang/GestureGAN) | [C2GAN](https://github.com/Ha0Tang/C2GAN) | [SelectionGAN](https://github.com/Ha0Tang/SelectionGAN) | [Guided-I2I-Translation-Papers](https://github.com/Ha0Tang/Guided-I2I-Translation-Papers)**
+**[XingGAN](https://github.com/Ha0Tang/XingGAN) | [CIT](https://github.com/Amazingren/CIT) | [BiGraphGAN](https://github.com/Ha0Tang/BiGraphGAN) | [GestureGAN](https://github.com/Ha0Tang/GestureGAN) | [C2GAN](https://github.com/Ha0Tang/C2GAN) | [SelectionGAN](https://github.com/Ha0Tang/SelectionGAN) | [Guided-I2I-Translation-Papers](https://github.com/Ha0Tang/Guided-I2I-Translation-Papers)**
 
 ## Citation
 If you use this code for your research, please cite our [paper](https://arxiv.org/abs/2007.09278).
@@ -100,7 +100,17 @@ XingGAN
 }
 ```
 
-If you use the original [BiGraphGAN](https://github.com/Ha0Tang/BiGraphGAN), [GestureGAN](https://github.com/Ha0Tang/GestureGAN), [C2GAN](https://github.com/Ha0Tang/C2GAN), and [SelectionGAN](https://github.com/Ha0Tang/SelectionGAN) model, please cite the following papers:
+If you use the original [CIT](https://github.com/Amazingren/CIT) | [BiGraphGAN](https://github.com/Ha0Tang/BiGraphGAN), [GestureGAN](https://github.com/Ha0Tang/GestureGAN), [C2GAN](https://github.com/Ha0Tang/C2GAN), and [SelectionGAN](https://github.com/Ha0Tang/SelectionGAN) model, please cite the following papers:
+
+Cloth Interactive Transformer (CIT)
+```
+@article{ren2021cloth,
+  title={Cloth Interactive Transformer for Virtual Try-On},
+  author={Ren, Bin and Tang, Hao and Meng, Fanyang and Ding, Runwei and Shao, Ling and Torr, Philip HS and Sebe, Nicu},
+  journal={arXiv preprint arXiv:2104.05519},
+  year={2021}
+}
+```
 
 BiGraphGAN
 ```
