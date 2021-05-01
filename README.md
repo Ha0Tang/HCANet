@@ -1,13 +1,7 @@
-# XingVTON (PAMI)
-Official implementation of XingVTON for "Cross-Attention Is What You Need for Person Image Generation and Virtual Try-On" .
-<br/>Project page: [TODO](-----). 
-<br/>Dataset: [XingVTON](https://1drv.ms/u/s!Ai8t8GAHdzVUiQQYX0azYhqIDPP6?e=4cpFTI)
-<br/>The code and pre-trained models are tested with pytorch 0.4.1, torchvision 0.2.1, opencv-python 4.1 and pillow 5.4 (Python 3 env).
-<br/><br/>
-[Project page]() | [Paper]() | [Dataset]() | [Video]()
-<br/><br/>
-![Teaser](./teaser.png)
-	
+# XingVTON
+Official implementation of XingVTON for "Cross-Attention Is What You Need for Person Image Generation and Virtual Try-On".
+The code and pre-trained models are tested with pytorch 0.4.1, torchvision 0.2.1, opencv-python 4.1, and pillow 5.4 (Python 3).
+
 ## Usage
 This pipeline is a combination of consecutive training and testing of person-cloth crossing (PCC) block based GMM and TOM. GMM generates the warped clothes according to the target human. Then, TOM blends the warped clothes outputs from GMM into the target human properties, to generate the final try-on output.
 
@@ -35,19 +29,16 @@ Run `python train.py` with your specific usage options for GMM and TOM stage.
 <br/>Run TOM stage, ```python train.py --name TOM --stage TOM --workers 4 --save_count 5000 --shuffle```
 
 
-
 ## Evaluation
 We adopt four evaluation metrics in our work for evaluating the performance of the proposed XingVTON. There are Jaccard score (JS), structral similarity index measure (SSIM), learned perceptual image patch similarity (LPIPS), and Inception score (IS).
 
 Note that JS is used for the same clothing retry-on cases (with ground truth cases) in the first geometric matching stage, while SSIM and LPIPS are used for the same clothing retry-on cases (with ground truth cases) in the second try-ob stage. In addition, IS is used to for different clothing try-on (where no ground truth is available).
-
 
 ### For JS 
 - Step1: Run```python test.py --name GMM --stage GMM --workers 4 --datamode test --data_list test_pairs_same.txt --checkpoint checkpoints/GMM_pretrained/gmm_final.pth```
 then the parsed segmentation area for current upper clothing is used as the reference image, accompanied with generated warped clothing mask then:
 
 - Step2: Run```python metrics/getJS.py```
-
 
 ### For SSIM
 After we run test.py for GMM network with the testibng dataset, the warped clothes and masks will be generated in "warp-cloth" and "warp-mask" folders inside the "result/GMM/test/" directory. Copy the "warp-cloth" and "warp-mask" folders into your data directory, for example inside "data/test" folder. Then:
@@ -63,17 +54,9 @@ Then the original target human image is used as the reference image, accompanied
 - Step1: Run TOM stage test ```python test.py --name TOM --stage TOM --workers 4 --datamode test --data_list test_pairs.txt --checkpoint checkpoints/TOM_pretrained/tom_final.pth```
 - Step2: Run ```python metrics/getIS.py```
 
-
 ## Inference/Demo
-The pre-trained models are directly provided in this project(./checkpoints), 
+The pre-trained models are directly provided in this project (./checkpoints), 
 Just run the same step as Evaluation to test/inference our model.
 
-
-## Citation
-Please cite our paper in your publications if it helps your research:
-```
-TODO
-```
-
 ### Acknowledgements
-This implementation is largely based on the PyTorch implementation of [CP-VTON](https://github.com/sergeywong/cp-vton) and [CP-VTON+](https://github.com/minar09/cp-vton-plus). We are extremely grateful for their public implementation.
+This implementation is largely based on the PyTorch implementation of [CP-VTON](https://github.com/sergeywong/cp-vton), [CP-VTON+](https://github.com/minar09/cp-vton-plus), and [XingGAN](https://github.com/Ha0Tang/XingGAN).
