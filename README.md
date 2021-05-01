@@ -38,16 +38,20 @@ This pipeline is a combination of consecutive training and testing of person-clo
 ## Installation
 This implementation is built and tested in PyTorch 0.4.1.
 Pytorch and torchvision are recommended to install with conda: `conda install pytorch=0.4.1 torchvision=0.2.1 -c pytorch`
-<br/>For all packages, run `pip install -r requirements.txt`
+
+For all packages, run `pip install -r requirements.txt`
 
 ## Data Preparation
 For training/testing VITON dataset, our full and processed dataset is available here: https://1drv.ms/u/s!Ai8t8GAHdzVUiQQYX0azYhqIDPP6?e=4cpFTI. After downloading, unzip to your own data directory.
 
 ## Training
 Run `python train.py` with your specific usage options for GMM and TOM stage.
-<br/>For example, GMM: ```python train.py --name GMM --stage GMM --workers 4 --save_count 5000 --shuffle```
-<br/> Then run test.py for GMM network with the training dataset, which will generate the warped clothes and masks in "warp-cloth" and "warp-mask" folders inside the "result/GMM/train/" directory. Copy the "warp-cloth" and "warp-mask" folders into your data directory, for example inside "data/train" folder.
-<br/>Run TOM stage, ```python train.py --name TOM --stage TOM --workers 4 --save_count 5000 --shuffle```
+
+For example, GMM: ```python train.py --name GMM --stage GMM --workers 4 --save_count 5000 --shuffle```.
+Then run test.py for GMM network with the training dataset, which will generate the warped clothes and masks in "warp-cloth" and "warp-mask" folders inside the "result/GMM/train/" directory. 
+Copy the "warp-cloth" and "warp-mask" folders into your data directory, for example inside "data/train" folder.
+
+Run TOM stage, ```python train.py --name TOM --stage TOM --workers 4 --save_count 5000 --shuffle```
 
 ## Evaluation
 We adopt four evaluation metrics in our work for evaluating the performance of the proposed XingVTON. There are Jaccard score (JS), structral similarity index measure (SSIM), learned perceptual image patch similarity (LPIPS), and Inception score (IS).
@@ -57,7 +61,6 @@ Note that JS is used for the same clothing retry-on cases (with ground truth cas
 ### For JS 
 - Step1: Run```python test.py --name GMM --stage GMM --workers 4 --datamode test --data_list test_pairs_same.txt --checkpoint checkpoints/GMM_pretrained/gmm_final.pth```
 then the parsed segmentation area for current upper clothing is used as the reference image, accompanied with generated warped clothing mask then:
-
 - Step2: Run```python metrics/getJS.py```
 
 ### For SSIM
@@ -75,14 +78,14 @@ Then the original target human image is used as the reference image, accompanied
 - Step2: Run ```python metrics/getIS.py```
 
 ## Inference
-The pre-trained models are directly provided in this project (./checkpoints), 
+The pre-trained models are directly provided in this project (./checkpoints).
 Just run the same step as Evaluation to test/inference our model.
 
 ## Acknowledgements
 This source code is inspired by [CP-VTON](https://github.com/sergeywong/cp-vton), [CP-VTON+](https://github.com/minar09/cp-vton-plus), and [XingGAN](https://github.com/Ha0Tang/XingGAN).
 
 ## Related Projects
-**[BiGraphGAN](https://github.com/Ha0Tang/BiGraphGAN) | [GestureGAN](https://github.com/Ha0Tang/GestureGAN) | [C2GAN](https://github.com/Ha0Tang/C2GAN) | [SelectionGAN](https://github.com/Ha0Tang/SelectionGAN) | [Guided-I2I-Translation-Papers](https://github.com/Ha0Tang/Guided-I2I-Translation-Papers)**
+**[XingGAN](https://github.com/Ha0Tang/XingGAN) | [BiGraphGAN](https://github.com/Ha0Tang/BiGraphGAN) | [GestureGAN](https://github.com/Ha0Tang/GestureGAN) | [C2GAN](https://github.com/Ha0Tang/C2GAN) | [SelectionGAN](https://github.com/Ha0Tang/SelectionGAN) | [Guided-I2I-Translation-Papers](https://github.com/Ha0Tang/Guided-I2I-Translation-Papers)**
 
 ## Citation
 If you use this code for your research, please cite our [paper](https://arxiv.org/abs/2007.09278).
