@@ -40,8 +40,7 @@ Run `python train.py` with your specific usage options for GMM and TOM stage.
 ## Evaluation
 We adopt four evaluation metrics in our work for evaluating the performance of the proposed XingVTON. There are Jaccard score (JS), structral similarity index measure (SSIM), learned perceptual image patch similarity (LPIPS), and Inception score (IS).
 
-Note that JS is used for the same clothing retry-on cases (with ground truth cases) in the first geometric matching stage, while SSIM and LPIPS are used for the same clothing retry-on cases (with ground truth cases) in the second try-ob stage. In addition, IS is used to for different clothing try-on (where no ground truth is available).
-
+Note that JS is used for the same clothing retry-on cases (with ground truth cases) in the first geometric matching stage, while SSIM and LPIPS are used for the same clothing retry-on cases (with ground truth cases) in the second try-ob stage. In addition, IS is used to for different clothing try-on (where no ground truth is available). 
 ### For JS 
 - Step1: Run```python test.py --name GMM --stage GMM --workers 4 --datamode test --data_list same_test_pairs.txt --checkpoint checkpoints/GMM/gmm_final.pth```
 then the parsed segmentation area for current upper clothing is used as the reference image, accompanied with generated warped clothing mask then:
@@ -51,7 +50,7 @@ then the parsed segmentation area for current upper clothing is used as the refe
 
 ### For SSIM
 After we run test.py for GMM network with the testibng dataset, the warped clothes and masks will be generated in "warp-cloth" and "warp-mask" folders inside the "result/GMM/test/" directory. Copy the "warp-cloth" and "warp-mask" folders into your data directory, for example inside "data/test" folder. Then:
-- Step1: Run TOM stage test ```python test.py --name TOM --stage TOM --workers 4 --datamode test --data_list test_pairs.txt --checkpoint checkpoints/TOM/tom_final.pth```
+- Step1: Run TOM stage test ```python test.py --name TOM --stage TOM --workers 4 --datamode test --data_list same_test_pairs.txt --checkpoint checkpoints/TOM/tom_final.pth```
 Then the original target human image is used as the reference image, accompanied with the generated retry-on image then:
 - Step2: Run ```python metrics/getSSIM.py```
 
@@ -59,21 +58,12 @@ Then the original target human image is used as the reference image, accompanied
 - Step1: Run ```sh metrics/PerceptualSimilarity/testLPIPS.sh```
 
 ### For IS
-
-
-
-## Testing and Evaluation
-Run 'python test.py' with your specific usage options.
-<br/>For example, GMM: ```python test.py --name GMM --stage GMM --workers 4 --datamode test --data_list test_pairs.txt --checkpoint checkpoints/GMM/gmm_final.pth```
-<br/> Then run test.py for GMM network with the testing dataset, which will generate the warped clothes and masks in "warp-cloth" and "warp-mask" folders inside the "result/GMM/test/" directory. Copy the "warp-cloth" and "warp-mask" folders into your data directory, for example inside "data/test" folder.
-<br/>Run TOM stage: ```python test.py --name TOM --stage TOM --workers 4 --datamode test --data_list test_pairs.txt --checkpoint checkpoints/TOM/tom_final.pth```
-
-
-
+- Step1: Run TOM stage test ```python test.py --name TOM --stage TOM --workers 4 --datamode test --data_list test_pairs.txt --checkpoint checkpoints/TOM/tom_final.pth```
+- Step2: Run ```python metrics/getIS.py```
 
 
 ## Inference/Demo
-Download the pre-trained models from here: https://1drv.ms/u/s!Ai8t8GAHdzVUiQA-o3C7cnrfGN6O?e=EaRiFP.
+Download the pre-trained models from here: $\color{red}{TODO}$.
 Then run the same step as Testing to test/inference our model.
 The code and pre-trained models are tested with pytorch 0.4.1, torchvision 0.2.1, opencv 4.1 and pillow 5.4.
 
@@ -101,14 +91,8 @@ Its difficult to understand your issue from only single image/output. As I menti
 ## Citation
 Please cite our paper in your publications if it helps your research:
 ```
-@InProceedings{Minar_CPP_2020_CVPR_Workshops,
-	title={CP-VTON+: Clothing Shape and Texture Preserving Image-Based Virtual Try-On},
-	author={Minar, Matiur Rahman and Thai Thanh Tuan and Ahn, Heejune and Rosin, Paul and Lai, Yu-Kun},
-	booktitle = {The IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR) Workshops},
-	month = {June},
-	year = {2020}
-}
+$\color{red}{TODO}$
 ```
 
 ### Acknowledgements
-This implementation is largely based on the PyTorch implementation of [CP-VTON](https://github.com/sergeywong/cp-vton). We are extremely grateful for their public implementation.
+This implementation is largely based on the PyTorch implementation of [CP-VTON](https://github.com/sergeywong/cp-vton) and [CP-VTON+](https://github.com/minar09/cp-vton-plus). We are extremely grateful for their public implementation.
