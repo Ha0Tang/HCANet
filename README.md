@@ -63,7 +63,7 @@ Then the original target human image is used as the reference image, accompanied
 
 
 ## Inference/Demo
-Download the pre-trained models from here: $\color{red}{TODO}$.
+Download the pre-trained models from here: TODO.
 Then run the same step as Testing to test/inference our model.
 The code and pre-trained models are tested with pytorch 0.4.1, torchvision 0.2.1, opencv 4.1 and pillow 5.4.
 
@@ -91,7 +91,7 @@ Its difficult to understand your issue from only single image/output. As I menti
 ## Citation
 Please cite our paper in your publications if it helps your research:
 ```
-$\color{red}{TODO}$
+TODO
 ```
 
 ### Acknowledgements
