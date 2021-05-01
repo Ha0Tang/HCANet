@@ -19,6 +19,5 @@ def test(generated_IMG_dir):
 
 
 if __name__ == "__main__":
-    #generated_images_dir = '/home/data/try-on/cp-vton_Plus/result/TOM/test/try-on'
     generated_images_dir = '/home/ht1/Xing_tryon/result/TOM/test/try-on'
     test(generated_images_dir)
