@@ -140,9 +140,7 @@ class FeatureCorrelation(nn.Module):
 
     def forward(self, feature_A, feature_B):
         b, c, h, w = feature_A.size()
-        print("###################")
-        print("FEATURE__A_SIZE", feature_A.size())
-        print("FEATURE__B_SIZE", feature_B.size())
+
         # reshape features for matrix multiplication
         feature_A = feature_A.transpose(2, 3).contiguous().view(b, c, h*w)
         feature_B = feature_B.view(b, c, h*w).transpose(1, 2)
@@ -150,8 +148,7 @@ class FeatureCorrelation(nn.Module):
         feature_mul = torch.bmm(feature_B, feature_A)
         correlation_tensor = feature_mul.view(
             b, h, w, h*w).transpose(2, 3).transpose(1, 2)
-        print("OUT_SIZE:", correlation_tensor.size())
-        print("###################")
+
         return correlation_tensor
 
 
@@ -408,21 +405,21 @@ class XingBlockTOM(nn.Module):
         
         proj_query = self.query_conv2(down_x2).view(b, -1, h*w).permute(0, 2, 1)  # [N, 256*192, 32]
         proj_key   = self.key_conv2(down_x1).view(b, -1, w*h)                     # [N, 32, 256*192]
-        #print('proj_query',proj_query.size())
-        #print('proj_key',proj_key.size())
+
         energy = torch.bmm(proj_query, proj_key)                            # [N, 256*192, 256*192]
-        #print("energy", energy.size())
+
         attention = self.softmax(energy)
-        #print("attention", attention.size())        
+       
 
         proj_value = self.value_conv2(down_x2).view(b, -1, h*w)                   # [N, 26, 256*192]
         
         x2_out = torch.bmm(proj_value, attention)                            # [N, 26, 256*192]
         x2_out = x2_out.view(b, -1, h, w)                                    # [N, 26, 256, 192]
         x2_out = self.upsample(x2_out)
-        #print('x2_out',x2_out.size())
-        correlation_tensor = torch.cat((x1, x2),dim=1) + x2_out + x1_out
-        #print('correlation_tensor',correlation_tensor.size()) 
+
+#         correlation_tensor = torch.cat((x1, x2),dim=1) + x2_out + x1_out
+        correlation_tensor =  x2_out + x1_out
+        
         return correlation_tensor
 
 
@@ -431,7 +428,6 @@ class XingBlockTOM(nn.Module):
 # |num_downs|: number of downsamplings in UNet. For example,
 # if |num_downs| == 7, image of size 128x128 will become of size 1x1
 # at the bottleneck
-
 
 class UnetGenerator(nn.Module):
     def __init__(self, input_nc, output_nc, num_downs, ngf=64,
@@ -453,7 +449,6 @@ class UnetGenerator(nn.Module):
             output_nc, ngf, input_nc=input_nc, submodule=unet_block, outermost=True, norm_layer=norm_layer)
 
         self.model = unet_block
-
         self.XingRelation = XingBlockTOM()
 
     def forward(self, input):
@@ -462,8 +457,6 @@ class UnetGenerator(nn.Module):
         ccm_feature = input[:, 22:26, :, :]       #[N, 4, 256, 192]
 
         xingTom = self.XingRelation(agnostic_feature, ccm_feature)
-
-
 
         return self.model(xingTom)
 
