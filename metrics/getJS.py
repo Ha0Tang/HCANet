@@ -56,8 +56,8 @@ def test(warpedMask_dir, mask_onPerson_dir):
 
 
 if __name__ == "__main__":
-	warpedMask_dir = './result/GMM/test/warp-mask'
-	mask_onPerson_dir = './result/GMM/test/pcm'
+	warpedMask_dir = 'PATH_of_your_project/XingVTON/result/GMM/test/warp-mask'
+	mask_onPerson_dir = 'PATH_of_your_project/XingVTON/result/GMM/test/pcm'
 
 	test(warpedMask_dir, mask_onPerson_dir)
 
