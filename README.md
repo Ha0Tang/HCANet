@@ -1,5 +1,5 @@
 # XingVTON
-Official implementation of XingVTON for "Cross-Attention Is What You Need for Person Image Generation and Virtual Try-On".
+Official PyTorch implementation of our paper "Cross-Attention Is What You Need for Person Image Generation and Virtual Try-On".
 The code and pre-trained models are tested with pytorch 0.4.1, torchvision 0.2.1, opencv-python 4.1, and pillow 5.4 (Python 3).
 
 ## Usage
