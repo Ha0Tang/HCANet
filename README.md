@@ -42,7 +42,7 @@ We adopt four evaluation metrics in our work for evaluating the performance of t
 
 Note that JS is used for the same clothing retry-on cases (with ground truth cases) in the first geometric matching stage, while SSIM and LPIPS are used for the same clothing retry-on cases (with ground truth cases) in the second try-ob stage. In addition, IS is used to for different clothing try-on (where no ground truth is available). 
 ### For JS 
-- Step1: Run```python test.py --name GMM --stage GMM --workers 4 --datamode test --data_list same_test_pairs.txt --checkpoint checkpoints/GMM/gmm_final.pth```
+- Step1: Run```python test.py --name GMM --stage GMM --workers 4 --datamode test --data_list test_pairs_same.txt --checkpoint checkpoints/GMM/gmm_final.pth```
 then the parsed segmentation area for current upper clothing is used as the reference image, accompanied with generated warped clothing mask then:
 
 - Step2: Run```python metrics/getJS.py```
@@ -50,7 +50,7 @@ then the parsed segmentation area for current upper clothing is used as the refe
 
 ### For SSIM
 After we run test.py for GMM network with the testibng dataset, the warped clothes and masks will be generated in "warp-cloth" and "warp-mask" folders inside the "result/GMM/test/" directory. Copy the "warp-cloth" and "warp-mask" folders into your data directory, for example inside "data/test" folder. Then:
-- Step1: Run TOM stage test ```python test.py --name TOM --stage TOM --workers 4 --datamode test --data_list same_test_pairs.txt --checkpoint checkpoints/TOM/tom_final.pth```
+- Step1: Run TOM stage test ```python test.py --name TOM --stage TOM --workers 4 --datamode test --data_list test_pairs_same.txt --checkpoint checkpoints/TOM/tom_final.pth```
 Then the original target human image is used as the reference image, accompanied with the generated retry-on image then:
 - Step2: Run ```python metrics/getSSIM.py```
 
