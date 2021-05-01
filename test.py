@@ -16,7 +16,6 @@ from visualization import board_add_image, board_add_images, save_images
 def get_opt():
     parser = argparse.ArgumentParser()
 
-    #parser.add_argument("--name", default="GMM")
     parser.add_argument("--name", default="TOM")
 
     parser.add_argument("--gpu_ids", default="")
@@ -25,14 +24,14 @@ def get_opt():
 
     parser.add_argument("--dataroot", default="data")
 
-    # parser.add_argument("--datamode", default="train")
+
     parser.add_argument("--datamode", default="test")
 
-    #parser.add_argument("--stage", default="GMM")
+
     parser.add_argument("--stage", default="TOM")
 
     parser.add_argument("--data_list", default="test_pairs.txt")
-    #parser.add_argument("--data_list", default="target.txt")
+
 
     parser.add_argument("--fine_width", type=int, default=192)
     parser.add_argument("--fine_height", type=int, default=256)
