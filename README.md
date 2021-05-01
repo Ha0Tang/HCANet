@@ -64,4 +64,4 @@ There are many factors that can make distorted/unexpected results. Can you pleas
 Its difficult to understand your issue from only single image/output. As I mentioned, there are various factors. Please debug yourself step by step and see where its going wrong. Check all the available inputs/outputs visually, and check multiple cases to see if the issue is happening for all cases. Good luck to you!
 
 ### Acknowledgements
-This implementation is largely based on the PyTorch implementation of [CP-VTON](https://github.com/sergeywong/cp-vton). We are extremely grateful for their public implementation.
+This implementation is largely based on the PyTorch implementation of both [cp-vton-plus](https://github.com/minar09/cp-vton-plus) and [XingGAN](https://github.com/Ha0Tang/XingGAN).
