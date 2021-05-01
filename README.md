@@ -1,13 +1,10 @@
-# XingVTON (PAMI)
+# XingVTON
 Official implementation of XingVTON for "Cross-Attention Is What You Need for Person Image Generation and Virtual Try-On" .
-<br/>Project page: TODO. 
+
 <br/>Saved/Pre-trained models: [TODO](--------)
 <br/>Dataset: [XingVTON](https://1drv.ms/u/s!Ai8t8GAHdzVUiQQYX0azYhqIDPP6?e=4cpFTI)
 <br/>The code and pre-trained models are tested with pytorch 0.4.1, torchvision 0.2.1, opencv-python 4.1 and pillow 5.4 (Python 3 env).
 <br/><br/>
-[Project page]() | [Paper]() | [Dataset]() | [Model]() | [Video]()
-<br/><br/>
-![Teaser](./teaser.png)
 	
 ## Usage
 This pipeline is a combination of consecutive training and testing of GMM + TOM. GMM generates the warped clothes according to the target human. Then, TOM blends the warped clothes outputs from GMM into the target human properties, to generate the final try-on output.
@@ -65,19 +62,6 @@ There are many factors that can make distorted/unexpected results. Can you pleas
 4) If you are testing with custom images then check the github repository readme and related issues on how to run with custom images.
 
 Its difficult to understand your issue from only single image/output. As I mentioned, there are various factors. Please debug yourself step by step and see where its going wrong. Check all the available inputs/outputs visually, and check multiple cases to see if the issue is happening for all cases. Good luck to you!
-
-
-## Citation
-Please cite our paper in your publications if it helps your research:
-```
-@InProceedings{Minar_CPP_2020_CVPR_Workshops,
-	title={CP-VTON+: Clothing Shape and Texture Preserving Image-Based Virtual Try-On},
-	author={Minar, Matiur Rahman and Thai Thanh Tuan and Ahn, Heejune and Rosin, Paul and Lai, Yu-Kun},
-	booktitle = {The IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR) Workshops},
-	month = {June},
-	year = {2020}
-}
-```
 
 ### Acknowledgements
 This implementation is largely based on the PyTorch implementation of [CP-VTON](https://github.com/sergeywong/cp-vton). We are extremely grateful for their public implementation.
