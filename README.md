@@ -50,7 +50,7 @@ then the parsed segmentation area for current upper clothing is used as the refe
 
 ### For SSIM
 After we run test.py for GMM network with the testibng dataset, the warped clothes and masks will be generated in "warp-cloth" and "warp-mask" folders inside the "result/GMM/test/" directory. Copy the "warp-cloth" and "warp-mask" folders into your data directory, for example inside "data/test" folder. Then:
-- Step1: Run TOM stage test ```python test.py --name TOM --stage TOM --workers 4 --datamode test --data_list test_pairs_same.txt --checkpoint checkpoints/TOM/tom_final.pth```
+- Step1: Run TOM stage test ```python test.py --name TOM --stage TOM --workers 4 --datamode test --data_list test_pairs_same.txt --checkpoint checkpoints/TOM_pretrained/tom_final.pth```
 Then the original target human image is used as the reference image, accompanied with the generated retry-on image then:
 - Step2: Run ```python metrics/getSSIM.py```
 
@@ -59,7 +59,7 @@ Then the original target human image is used as the reference image, accompanied
 - Step1: Run ```sh metrics/PerceptualSimilarity/testLPIPS.sh```;
 
 ### For IS
-- Step1: Run TOM stage test ```python test.py --name TOM --stage TOM --workers 4 --datamode test --data_list test_pairs.txt --checkpoint checkpoints/TOM/tom_final.pth```
+- Step1: Run TOM stage test ```python test.py --name TOM --stage TOM --workers 4 --datamode test --data_list test_pairs.txt --checkpoint checkpoints/TOM_pretrained/tom_final.pth```
 - Step2: Run ```python metrics/getIS.py```
 
 
