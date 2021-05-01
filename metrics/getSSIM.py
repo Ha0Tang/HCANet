@@ -45,7 +45,7 @@ def test(generated_IMG_dir, reference_IMG_dir):
 
 
 if __name__ == "__main__":
-    generated_images_dir = '/home/ht1/Xing_tryon/result/TOM/test/try-on'
-    reference_images_dir = '/home/ht1/Xing_tryon/data/test/image'
+    generated_images_dir = 'PATH_of_your_project/XingVTON/result/TOM/test/try-on'
+    reference_images_dir = 'PATH_of_your_project/XingVTON/data/test/image'
 
     test(generated_images_dir, reference_images_dir)
