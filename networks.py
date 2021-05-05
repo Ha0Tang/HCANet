@@ -385,14 +385,14 @@ class XingBlockTOM(nn.Module):
         b, c, h, w = down_x1.size()    # [N, 512, 16, 12]
         
         proj_query = self.query_conv1(down_x1).view(b, -1, w*h).permute(0, 2, 1)  # [N, 256*192, 32]
-        #print("###proj_query", proj_query.size())
+        #print("proj_query", proj_query.size())
         proj_key   = self.key_conv1(down_x2).view(b, -1, w*h)                     # [N, 32, 256*192]
-        #print("!!!proj_key", proj_key.size())
+        #print("proj_key", proj_key.size())
 
         energy = torch.bmm(proj_query, proj_key)                             # [N, 256*192, 256*192]
         #print("energy", energy.size())
         attention = self.softmax(energy)    
-        #print("!!!!!attention", attention.size())                    
+        #print("attention", attention.size())                    
 
         proj_value = self.value_conv1(down_x1).view(b, -1, h*w)                   # [N, 26, 256*192]
         #print("proj_value",proj_value.size())
@@ -417,7 +417,7 @@ class XingBlockTOM(nn.Module):
         x2_out = x2_out.view(b, -1, h, w)                                    # [N, 26, 256, 192]
         x2_out = self.upsample(x2_out)
 
-#         correlation_tensor = torch.cat((x1, x2),dim=1) + x2_out + x1_out
+#       correlation_tensor = torch.cat((x1, x2),dim=1) + x2_out + x1_out
         correlation_tensor =  x2_out + x1_out
         
         return correlation_tensor
