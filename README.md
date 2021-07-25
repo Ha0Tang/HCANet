@@ -187,6 +187,6 @@ SelectionGAN
 If you have any questions/comments/bug reports, feel free to open a github issue or pull a request or e-mail to the author Hao Tang ([bjdxtanghao@gmail.com](bjdxtanghao@gmail.com)).
 
 ## Collaborations
-I'm always interested in meeting new people and hearing about potential collaborations. If you'd like to work together or get in contact with me, please email hao.tang@unitn.it.
+I'm always interested in meeting new people and hearing about potential collaborations. If you'd like to work together or get in contact with me, please email bjdxtanghao@gmail.com.
 ___
 *If you want something you've never had, you must be willing to do something you've never done.*
