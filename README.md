@@ -7,7 +7,7 @@
 ![Ask Me Anything !](https://img.shields.io/badge/Ask%20me-anything-1abc9c.svg)
 
 ## Contents
-  - [XingVTON](#XingVTON)
+  - [HCA](#HCA)
   - [Usage](#Usage)
   - [Installation](#Installation)
   - [Data Preparation](#Dataset-Preparation)
@@ -20,8 +20,8 @@
   - [Contributions](#Contributions)
   - [Collaborations](#Collaborations)
 
-## XingVTON
-Official PyTorch implementation of our paper "Cross-Attention Is What You Need for Person Image Generation and Virtual Try-On".
+## HCA
+Official PyTorch implementation of our paper "Hierarchical Cross-Attention for Virtual Try-On".
 The code and pre-trained models are tested with pytorch 0.4.1, torchvision 0.2.1, opencv-python 4.1, and pillow 5.4 (Python 3.6).
 
 ### [License](./LICENSE.md)
