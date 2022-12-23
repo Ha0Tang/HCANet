@@ -92,7 +92,7 @@ The pre-trained models are directly provided in this project (./checkpoints).
 Just run the same step as Evaluation to test/inference our model.
 
 ## Acknowledgements
-This source code is inspired by [CP-VTON](https://github.com/sergeywong/cp-vton), [CP-VTON+](https://github.com/minar09/cp-vton-plus), and [XingGAN](https://github.com/Ha0Tang/XingGAN).
+This source code is inspired by [CP-VTON](https://github.com/sergeywong/cp-vton), and [CP-VTON+](https://github.com/minar09/cp-vton-plus).
 
 ## Related Projects
 **[XingGAN](https://github.com/Ha0Tang/XingGAN) | [CIT](https://github.com/Amazingren/CIT) | [BiGraphGAN](https://github.com/Ha0Tang/BiGraphGAN) | [GestureGAN](https://github.com/Ha0Tang/GestureGAN) | [C2GAN](https://github.com/Ha0Tang/C2GAN) | [SelectionGAN](https://github.com/Ha0Tang/SelectionGAN) | [Guided-I2I-Translation-Papers](https://github.com/Ha0Tang/Guided-I2I-Translation-Papers)**
